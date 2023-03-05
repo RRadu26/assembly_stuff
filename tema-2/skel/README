@@ -1,0 +1,23 @@
+Rotp:
+	Am copiat caracterele dorite din key si plaintext in registrele ebx si eax , am efectuat operatia
+	xor intre acestea(salvand rezultatul in eax) apoi am mutat in ciphertext rezultatul din eax.
+	S-a folosit comanda loop
+Ages:
+	Se foloseste registrul ebx ca indice pentru iterarea prin toate datele de nastere
+	Pentru fiecare data de nastere ,Prima data se calculeaza varsta ca fiind diferenta dintre
+	anul prezent si cel al nasterii , apoi se verifica daca data nasterii e dupa data curenta
+	prin compararea succesiva a anilor , lunilor si zilelor . In cazul in care data nasterii este
+	dupa data curenta , varsta returnata va fii 0 , altfel se trece la pasul urmator. Se verifica
+	daca a a fost ziua de nastere sau nu din anul prezent prin compararea succesiva a lunilor
+	si zilelor , in caz afirmativ se returneaza varsta calculata , daca nu se decrementeaza cu 1
+	si se returneaza asa.
+Columnar:
+	Haystack se considera o pseudomatrice . Pentru fiecare coloana , luate in ordinea din key ,
+	se trece pe rand prin fiecare linie si se adauga charul respectiv la ciphertext . Pentru a trece
+	prin coloane , se muta in registrul edx valoarea din key[ecx] si se trece la urmatoarea linie
+	prin adaugarea la edx len_cheie . 
+Cache:
+	Se calculeaza offsetul si tagul , apoi se cauta tagul curent in tags , daca este gasit se adauga
+	memoria din cache in registru , daca nu a fost gasit se adauga tagul in tags la linia to_replace,
+	apoi se aduce memoria din ram in cache la linia to_replace iar ulterior se aduce memoria din cache
+	in registru in acelasi mod

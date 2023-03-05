@@ -1,0 +1,29 @@
+-Functia init create directorul home(aloca memorie si seteaza numele)
+-Functia quit sterge directorul transmis ca parametru si contintul lui .Prima data
+se sterg toate fisierele din director(se dezaloca memoria) , iar apoi functia se 
+apeleaza recursiv pentru fiecare director din cel curent . La final se dezaloca 
+memoria alocata anterior directorului curent.
+-Functia createdir create un director , aloca memorie pentru acesta , ii seteaza
+numele si parentul
+-Functia createfile face acelasi lucru , numai ca creaza un fisier
+-Functia mkdir verifica daca exista deja un fisier cu numele transmis ca parametru,
+in caz contrat apeleaza functia mkdir.
+-Functia touch face acelasi lucru , numai ca pentru un fisier
+-Functia ls printeaza toate directoarele , de la head_children_files ; mai apoi 
+fisierele
+-Functia rm cauta in fisierele directorului dat ca parametru un fisier cu numele dat
+ca parametru , daca nu il gaseste printeaza mesajul Could not find file , in caz
+contrar dezaloca memoria alocata anterior fisierului sters.
+-Functia rmdir face acelasi lucru pentru un director , in caz ca gaseste directorul
+cautat se apeleaza functia quit
+-Functia cd schimba directorul curent cu cel cu numele dat ca parametru , in functia
+main se lucreaza pe un Dir *current , aceasta functie schimba acest Dir in cel cautat.
+Daca se da .. ca numele directorului cautat , *current devine target->parent.
+-Functia pwd returneaza calea fisierului , prin apelarea functiei strcat in mod repetat
+intr-un sir temporar.
+-Functia tree afiseaza continutul directorului current . Se apeleaza recursiv pentru
+afisarea continutului directoarelor children.
+-Functia mv redenumeste un director sau un fisier prin stergerea celui gasit si creerea
+unuia nou cu numele newname
+-Functia command compara comanda data cu stringurile specifice fiecarei comenzi , 
+daca se potriveste se executa .
